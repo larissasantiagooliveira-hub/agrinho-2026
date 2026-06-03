@@ -4,102 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                <i class="fa-solid fa-leaf"></i> Agro<span>Sustentável</span>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#pilares">Pilares</a></li>
-                    <li><a href="#dados">Impacto</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Agro Forte</h1>
+                <h2>Futuro Sustentável</h2>
+                <p>O equilíbrio perfeito entre a alta produtividade no campo e a preservação do meio ambiente.</p>
+                <button id="btn-conhecer" class="btn-principal">Conheça Nossa Missão</button>
             </div>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>O equilíbrio perfeito entre a alta produtividade no campo e a preservação do meio ambiente. Descubra como a tecnologia e a natureza caminham juntas.</p>
-            <a href="#pilares" class="btn">Conheça Nossas Práticas</a>
-        </div>
-    </section>
-
-    <section id="pilares" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">O Equilíbrio em Prática</h2>
-            <div class="cards-grid">
+    <main class="container">
+        <section id="missao" class="section-pilares">
+            <h3 class="titulo-sessao">Nossos Pilares</h3>
+            <div class="grid-pilares">
                 <div class="card">
-                    <i class="fa-solid fa-seedling card-icon"></i>
-                    <h3>Produção Consciente</h3>
-                    <p>Uso de técnicas como a rotação de culturas e o plantio direto, que mantêm a saúde do solo e reduzem a necessidade de insumos químicos.</p>
+                    <div class="card-icon">🌱</div>
+                    <h4>Produção Consciente</h4>
+                    <p>Uso de tecnologias de precisão que otimizam recursos, reduzem o desperdício e maximizam a colheita de forma limpa.</p>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-droplet card-icon"></i>
-                    <h3>Gestão Hídrica</h3>
-                    <p>Sistemas de irrigação inteligente por gotejamento e captação de água da chuva, evitando o desperdício de recursos vitais.</p>
+                    <div class="card-icon">🔄</div>
+                    <h4>Equilíbrio Vital</h4>
+                    <p>Práticas agrícolas regenerativas que protegem o solo, cuidam dos mananciais e respeitam a biodiversidade local.</p>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-solar-panel card-icon"></i>
-                    <h3>Energia Limpa</h3>
-                    <p>Integração de matrizes solares e biomassa nas propriedades rurais, reduzindo a pegada de carbono do agronegócio.</p>
+                    <div class="card-icon">🚜</div>
+                    <h4>Tecnologia Verde</h4>
+                    <p>Maquinários modernos integrados com inteligência de dados para monitorar e reduzir a pegada de carbono no campo.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="dados" class="stats-section">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <span class="stat-number" data-target="45">0</span><span class="stat-symbol">%</span>
-                <p>Redução no consumo de água</p>
+        <section class="section-calculadora">
+            <h3>Simulador de Impacto Sustentável</h3>
+            <p>Descubra quanta água a tecnologia de manejo correto pode economizar com base na área cultivada:</p>
+            <div class="calculadora-box">
+                <input type="number" id="hectares-input" placeholder="Digite a quantidade de hectares">
+                <button id="btn-calcular">Calcular Economia</button>
+                <div id="resultado-calculo" class="resultado-escondido"></div>
             </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="120">0</span><span class="stat-symbol">k</span>
-                <p>Hectares reflorestados</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="85">0</span><span class="stat-symbol">%</span>
-                <p>Uso de energia renovável</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="section-padding contact-section">
-        <div class="container">
-            <h2 class="section-title">Faça Parte Desse Futuro</h2>
-            <form id="contactForm" class="agro-form">
-                <div class="form-group">
-                    <label for="name">Nome Completo</label>
-                    <input type="text" id="name" required placeholder="Digite seu nome">
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" required placeholder="seu.email@exemplo.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensagem</label>
-                    <textarea id="message" rows="5" required placeholder="Como podemos ajudar a transformar sua produção?"></textarea>
-                </div>
-                <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
-            </form>
-            <div id="formFeedback" class="form-feedback hidden"></div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 AgroSustentável. Cultivando a produtividade, protegendo a vida.</p>
+        <p>&copy; 2026 Agro Forte, Futuro Sustentável. Desenvolvido com foco no equilíbrio ambiental.</p>
     </footer>
 
     <script src="script.js"></script>

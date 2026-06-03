@@ -1,318 +1,206 @@
-/* --- Configurações Gerais e Resets --- */
-:root {
-    --primary-color: #2e7d32; /* Verde Agro */
-    --secondary-color: #81c784; /* Verde Claro */
-    --dark-color: #1b5e20; /* Verde Escuro */
-    --text-color: #333333;
-    --light-bg: #f4f9f4;
-    --white: #ffffff;
-    --transition: all 0.3s ease;
-}
-
+/* --- Reset e Configurações Globais --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    color: var(--text-color);
-    background-color: var(--white);
+    /* Merriweather atua como a fonte "Classic" (serifada, elegante e de excelente leitura) */
+    font-family: 'Merriweather', Georgia, serif; 
+    background-color: #fbf9f6; /* Off-white com fundo levemente aquecido */
+    color: #3e2723; /* Marrom escuro "terra" para os textos principais */
     line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-padding {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--dark-color);
-    margin-bottom: 50px;
+/* --- Banner Principal (Hero Section) --- */
+.hero {
+    /* Imagem de alta resolução representando trator/colheitadeira no campo */
+    background-image: url('https://images.unsplash.com/photo-1592991538534-00972b6f59ab?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
     position: relative;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--secondary-color);
-    margin: 10px auto 0;
-    border-radius: 2px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: var(--dark-color);
-    transform: translateY(-2px);
-}
-
-/* --- Cabeçalho e Menu --- */
-header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
+/* Máscara escura com tom verde-oliva para dar contraste ao texto */
+.hero-overlay {
+    background-color: rgba(34, 59, 38, 0.75); 
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.logo span {
-    color: var(--text-color);
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--primary-color);
-}
-
-/* --- Seção Hero --- */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), 
-                url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    color: var(--white);
-    padding: 0 20px;
+    padding: 20px;
 }
 
-.hero-content max-width {
-    max-width: 800px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+.hero-content h1 {
+    font-family: 'Great Vibes', cursive; /* Fonte manuscrita artística solicitada */
+    font-size: 5.5rem;
+    color: #c5e1a5; /* Verde claro/folha */
+    margin-bottom: -10px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+.hero-content h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* --- Cards dos Pilares --- */
-.cards-grid {
+.hero-content p {
+    font-size: 1.25rem;
+    color: #f5f5f5;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+}
+
+/* --- Botões --- */
+.btn-principal {
+    background-color: #4caf50; /* Verde sustentável */
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-principal:hover {
+    background-color: #388e3c; /* Tom verde mais escuro ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+/* --- Container e Layout das Seções --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.titulo-sessao {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #2e7d32; /* Verde forte vegetal */
+}
+
+/* Grid de Cards */
+.grid-pilares {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    margin-bottom: 80px;
 }
 
 .card {
-    background: var(--light-bg);
-    padding: 40px 30px;
-    border-radius: 10px;
-    text-align: center;
-    transition: var(--transition);
-    border-bottom: 4px solid transparent;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 8px;
+    border-top: 5px solid #8d6e63; /* Detalhe superior em Marrom Terra */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-bottom: 4px solid var(--primary-color);
 }
 
 .card-icon {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: var(--dark-color);
-}
-
-/* --- Seção de Estatísticas (Impacto) --- */
-.stats-section {
-    background-color: var(--dark-color);
-    color: var(--white);
-    padding: 60px 0;
-}
-
-.stats-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.stat-item {
-    margin: 20px;
-    flex: 1;
-    min-width: 200px;
-}
-
-.stat-number {
-    font-size: 3.5rem;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.stat-symbol {
     font-size: 2.5rem;
-    color: var(--secondary-color);
-    font-weight: bold;
+    margin-bottom: 15px;
 }
 
-.stat-item p {
-    font-size: 1.1rem;
-    color: #e8f5e9;
-    margin-top: 10px;
+.card h4 {
+    font-size: 1.35rem;
+    color: #2e7d32;
+    margin-bottom: 12px;
 }
 
-/* --- Formulário de Contato --- */
-.contact-section {
-    background-color: #fff;
-}
-
-.agro-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--light-bg);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-color);
-}
-
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
-}
-
-.btn-submit {
-    width: 100%;
-    font-size: 1.1rem;
-}
-
-.form-feedback {
+/* --- Seção da Calculadora Interativa --- */
+.section-calculadora {
+    background-color: #efebe9; /* Fundo em tom marrom bem suave */
+    padding: 50px 40px;
+    border-radius: 8px;
     text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
+    border: 1px solid #d7ccc8;
+}
+
+.section-calculadora h3 {
+    color: #4e342e; /* Marrom escuro */
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.calculadora-box {
+    margin-top: 25px;
+}
+
+.calculadora-box input {
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #bcaaa4;
+    border-radius: 4px;
+    width: 280px;
+    max-width: 100%;
+    margin-right: 10px;
+    font-family: 'Merriweather', serif;
+}
+
+.calculadora-box button {
+    background-color: #8d6e63; /* Botão Marrom */
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
-.form-feedback.success {
-    background-color: #d4edda;
-    color: #155724;
+.calculadora-box button:hover {
+    background-color: #6d4c41;
 }
 
-.form-feedback.hidden {
-    display: none;
+#resultado-calculo {
+    margin-top: 25px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* Classes manipuladas pelo JS */
+.resultado-visivel {
+    background-color: #e8f5e9; /* Fundo verde claro de sucesso */
+    color: #1b5e20;
+    border: 1px solid #c8e6c9;
 }
 
 /* --- Rodapé --- */
 footer {
-    background-color: #111;
-    color: #aaa;
+    background-color: #1b5e20; /* Verde escuro fechado */
+    color: #e8f5e9;
     text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9rem;
+    padding: 30px;
+    font-size: 0.95rem;
 }
 
-/* --- Responsividade (Mobile) --- */
+/* --- Responsividade Básica --- */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Em projetos reais, adiciona-se JS para abrir o menu hambúrguer */
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    .hero h1 {
-        font-size: 2.3rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
+    .hero-content h1 { font-size: 3.8rem; }
+    .hero-content h2 { font-size: 1.8rem; }
+    .calculadora-box input { margin-bottom: 15px; width: 100%; }
+    .calculadora-box button { width: 100%; }
 }
